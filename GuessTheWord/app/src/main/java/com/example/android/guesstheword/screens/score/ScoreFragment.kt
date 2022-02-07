@@ -50,6 +50,7 @@ class ScoreFragment : Fragment() {
         )
         scoreViewModelFactory = ScoreViewModelFactory(ScoreFragmentArgs.fromBundle(requireArguments()).score);
         scoreViewModel = ViewModelProvider(this, scoreViewModelFactory).get(ScoreViewModel::class.java);
+        binding.scoreViewModel = scoreViewModel;
         binding.scoreText.text = scoreViewModel.score.toString();
         return binding.root
     }

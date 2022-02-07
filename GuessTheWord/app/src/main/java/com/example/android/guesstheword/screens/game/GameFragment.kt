@@ -53,45 +53,37 @@ class GameFragment : Fragment() {
 
         Log.i("GameFragment", "Called ViewModelProvider.get")
         viewModel = ViewModelProvider(this).get(GameViewModel::class.java)
+        binding.gameViewModel = viewModel;
+        binding.lifecycleOwner = viewLifecycleOwner;
 
-        binding.correctButton.setOnClickListener { onCorrect() }
-        binding.skipButton.setOnClickListener { onSkip() }
-        binding.endGameButton.setOnClickListener{onEndGame()};
+//        viewModel.score.observe(viewLifecycleOwner, Observer {newScore ->
+//            run {
+//                binding.scoreText.text = newScore.toString();
+//            }
+//        });
 
-        viewModel.score.observe(viewLifecycleOwner, Observer {newScore ->
+//        viewModel.word.observe(viewLifecycleOwner, Observer { newWord ->
+//            run {
+//                binding.wordText.text = newWord;
+//            }
+//        })
+
+        viewModel.eventGameFinish.observe(viewLifecycleOwner, Observer { gameHasFinished ->
             run {
-                binding.scoreText.text = newScore.toString();
+                    if(gameHasFinished) gameFinished();
             }
         });
 
-        viewModel.word.observe(viewLifecycleOwner, Observer { newWord ->
-            run {
-                binding.wordText.text = newWord;
-            }
-        })
         return binding.root
 
     }
 
-
-    /** Methods for button click handlers **/
-
-    private fun onSkip() {
-        viewModel.onSkip()
-    }
-
-    private fun onCorrect() {
-        viewModel.onCorrect()
-    }
-
-    private fun onEndGame() {
-        gameFinished();
-    }
 
     private fun gameFinished() {
         Toast.makeText(activity, "Game has just finished", Toast.LENGTH_SHORT).show()
         val action = GameFragmentDirections.actionGameToScore()
         action.score = viewModel.score.value?:0;
         NavHostFragment.findNavController(this).navigate(action)
+        viewModel.onGameFinishComplete();
     }
 }
