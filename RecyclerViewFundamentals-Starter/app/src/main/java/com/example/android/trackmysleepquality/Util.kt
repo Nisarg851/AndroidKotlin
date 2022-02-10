@@ -1,22 +1,4 @@
-<<<<<<< HEAD
-=======
-/*
- * Copyright 2019, The Android Open Source Project
- *
- * Licensed under the Apache License, Version 2.0 (the "License");
- * you may not use this file except in compliance with the License.
- * You may obtain a copy of the License at
- *
- *     http://www.apache.org/licenses/LICENSE-2.0
- *
- * Unless required by applicable law or agreed to in writing, software
- * distributed under the License is distributed on an "AS IS" BASIS,
- * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- * See the License for the specific language governing permissions and
- * limitations under the License.
- */
 
->>>>>>> 6134f1383423a6e33ce59e63ae7374d177df0932
 package com.example.android.trackmysleepquality
 
 import android.annotation.SuppressLint
@@ -24,8 +6,8 @@ import android.content.res.Resources
 import android.os.Build
 import android.text.Html
 import android.text.Spanned
-<<<<<<< HEAD
 import android.widget.TextView
+import androidx.annotation.RequiresApi
 import androidx.recyclerview.widget.RecyclerView
 import com.example.android.trackmysleepquality.database.SleepNight
 import java.text.SimpleDateFormat
@@ -57,9 +39,8 @@ fun convertDurationToFormatted(startTimeMilli: Long, endTimeMilli: Long, res: Re
 
 
 
-=======
-import com.example.android.trackmysleepquality.database.SleepNight
-import java.text.SimpleDateFormat
+//import com.example.android.trackmysleepquality.database.SleepNight
+//import java.text.SimpleDateFormat
 //import java.util.concurrent.TimeUnit
 //import java.util.*
 
@@ -95,7 +76,6 @@ import java.text.SimpleDateFormat
 /**
  * Returns a string representing the numeric quality rating.
  */
->>>>>>> 6134f1383423a6e33ce59e63ae7374d177df0932
 fun convertNumericQualityToString(quality: Int, resources: Resources): String {
     var qualityString = resources.getString(R.string.three_ok)
     when (quality) {
@@ -109,8 +89,6 @@ fun convertNumericQualityToString(quality: Int, resources: Resources): String {
     return qualityString
 }
 
-<<<<<<< HEAD
-=======
 
 /**
  * Take the Long milliseconds returned by the system and stored in Room,
@@ -121,14 +99,11 @@ fun convertNumericQualityToString(quality: Int, resources: Resources): String {
  * dd-yyyy - day in month and full year numerically
  * HH:mm - Hours and minutes in 24hr format
  */
->>>>>>> 6134f1383423a6e33ce59e63ae7374d177df0932
 @SuppressLint("SimpleDateFormat")
 fun convertLongToDateString(systemTime: Long): String {
     return SimpleDateFormat("EEEE MMM-dd-yyyy' Time: 'HH:mm")
             .format(systemTime).toString()
 }
-<<<<<<< HEAD
-=======
 
 /**
  * Takes a list of SleepNights and converts and formats it into one string for display.
@@ -143,7 +118,7 @@ fun convertLongToDateString(systemTime: Long): String {
  * @return  Spanned - An interface for text that has formatting attached to it.
  *           See: https://developer.android.com/reference/android/text/Spanned
  */
->>>>>>> 6134f1383423a6e33ce59e63ae7374d177df0932
+@RequiresApi(Build.VERSION_CODES.N)
 fun formatNights(nights: List<SleepNight>, resources: Resources): Spanned {
     val sb = StringBuilder()
     sb.apply {
@@ -178,7 +153,4 @@ fun formatNights(nights: List<SleepNight>, resources: Resources): Spanned {
     }
 }
 
-<<<<<<< HEAD
 class TextItemViewHolder(val textView: TextView): RecyclerView.ViewHolder(textView)
-=======
->>>>>>> 6134f1383423a6e33ce59e63ae7374d177df0932
