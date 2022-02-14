@@ -1,9 +1,10 @@
-package com.example.todo
+package com.example.todo.Activities
 
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import androidx.databinding.DataBindingUtil
 import androidx.recyclerview.widget.RecyclerView
+import com.example.todo.R
 import com.example.todo.databinding.ActivityMainBinding
 import com.google.android.material.textfield.TextInputEditText
 import com.google.android.material.textfield.TextInputLayout
@@ -23,9 +24,11 @@ class MainActivity : AppCompatActivity() {
         binding = DataBindingUtil.setContentView(this, R.layout.activity_main)
 
         // Recycler View
-        taskList = binding.taskList
+        var tasks: List<String> = ArrayList<String>()
+        taskList = binding.rvTaskList
+
 
         taskInputLayout = binding.taskInputLayout
-        taskInput = binding.taskInput
+        taskInput = binding.etTaskInput
     }
 }
