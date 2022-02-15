@@ -26,6 +26,7 @@
             app:endIconDrawable="@drawable/add_button"
             app:endIconMode="custom"
             app:endIconTint="#00ff00"
+            app:boxBackgroundMode="outline"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -41,18 +42,20 @@
 
         </com.google.android.material.textfield.TextInputLayout>
 
-        <!--    <com.google.android.material.button.MaterialButton-->
-        <!--        android:id="@+id/materialButton"-->
-        <!--        style="@style/icon_button"-->
-        <!--        android:background="@color/teal_200"-->
-        <!--        app:icon="@drawable/add_button"-->
-        <!--        app:iconPadding="@dimen/icon_padding"-->
-        <!--        app:iconSize="@dimen/icon_size"-->
-        <!--        app:iconTint="#00ff00"-->
-        <!--        app:layout_constraintBottom_toBottomOf="parent"-->
-        <!--        app:layout_constraintEnd_toEndOf="parent"-->
-        <!--        app:layout_constraintStart_toEndOf="@+id/taskInputLayout"-->
-        <!--        app:layout_constraintTop_toTopOf="@+id/taskInputLayout" />-->
+<!--            <com.google.android.material.button.MaterialButton-->
+<!--                android:layout_width="wrap_content"-->
+<!--                android:layout_height="wrap_content"-->
+<!--                android:id="@+id/materialButton"-->
+<!--                style="@style/Widget.Material3.Button.IconButton"-->
+<!--                android:backgroundTint="#ff0000"-->
+<!--                app:icon="@drawable/add_button"-->
+<!--                app:iconPadding="@dimen/icon_padding"-->
+<!--                app:iconSize="@dimen/icon_size"-->
+<!--                app:iconTint="#00ff00"-->
+<!--                app:layout_constraintBottom_toBottomOf="parent"-->
+<!--                app:layout_constraintEnd_toEndOf="parent"-->
+<!--                app:layout_constraintStart_toStartOf="parent"-->
+<!--                app:layout_constraintTop_toTopOf="parent" />-->
 
     </androidx.constraintlayout.widget.ConstraintLayout>
 </layout>
