@@ -2,29 +2,66 @@
 <com.google.android.material.card.MaterialCardView
     xmlns:android="http://schemas.android.com/apk/res/android"
     xmlns:app="http://schemas.android.com/apk/res-auto"
+    android:id="@+id/cvRootLayout"
     android:layout_width="match_parent"
     android:layout_height="64dp"
-    android:layout_margin="4dp"
-    app:cardCornerRadius="5dp"
-    app:cardBackgroundColor="@color/task_background_color">
+    android:layout_margin="10dp"
+    app:cardCornerRadius="8dp"
+    app:cardElevation="5dp"
+    app:cardBackgroundColor="@color/primary_foreground">
 
-    <TextView
-        android:id="@+id/tvTaskTitle"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:layout_margin="5dp"
-        android:text="Task"
-        android:textSize="23dp"
-        android:textColor="@color/white"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintEnd_toEndOf="parent"
-        app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent" />
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:id="@+id/clTaskLayout"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent">
 
-    <TextView
-        android:layout_width="15dp"
-        android:layout_height="match_parent"
-        android:background="@color/red"
-        android:layout_gravity="end"
-        android:layout_marginRight="10dp"/>
+        <TextView
+            android:id="@+id/tvTaskTitle"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_margin="5dp"
+            android:text="Task"
+            android:textColor="@color/primary_text_white"
+            android:textSize="20dp"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTaskDescription"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:maxWidth="350dp"
+            android:layout_margin="5dp"
+            android:text="No Description Provided No Description Provided No Description Provided No Description Provided No Description ProvidedNo Description Provided "
+            android:textColor="@color/primary_text_white"
+            android:textSize="20dp"
+            android:visibility="gone"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/tvTaskTitle" />
+
+        <TextView
+            android:id="@+id/tvTaskComplete"
+            android:layout_width="15dp"
+            android:layout_height="0dp"
+            android:layout_marginRight="15dp"
+            android:layout_gravity="end"
+            android:background="@color/red"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toStartOf="@+id/tvTaskDelete"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/tvTaskDelete"
+            android:visibility="gone"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginRight="10dp"
+            android:background="@drawable/delete_button"
+            android:backgroundTint="@color/primary_text_white"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
 </com.google.android.material.card.MaterialCardView>

@@ -51,9 +51,18 @@ class MainActivity : AppCompatActivity(), View.OnClickListener {
         tasks.add("Task1")
         tasks.add("Task2")
         tasks.add("Task3")
+        tasks.add("Task1")
+        tasks.add("Task2")
+        tasks.add("Task3")
+        tasks.add("Task1")
+        tasks.add("Task2")
+        tasks.add("Task3")
+        tasks.add("Task1")
+        tasks.add("Task2")
+        tasks.add("Task3")
 
         rvTaskList = binding.rvTaskList
-        rvTaskList.adapter = TaskListRecyclerAdapter(tasks)
+        rvTaskList.adapter = TaskListRecyclerAdapter(this,tasks)
         Log.i("RecyclerView", "onCreate: Adapter bounded")
     }
 

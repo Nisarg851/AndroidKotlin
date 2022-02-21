@@ -5,12 +5,20 @@
     <color name="purple_700">#FF3700B3</color>
     <color name="teal_200">#FF03DAC5</color>
     <color name="teal_700">#FF018786</color>
-
-<!--    Custom theme color-->
     <color name="white">#FFFFFFFF</color>
     <color name="black">#FF000000</color>
+<!--    Custom theme color-->
+    <color name="primary_foreground">#30354b</color>
+    <color name="primary_background">#121429</color>
+    <color name="primary_highlight">#ea882e</color>
+    <color name="temp">
+    </color>
+    <color name="primary_text_white">#e6e7e9</color>
+
+<!--    Common Pallet-->
+    <color name="invisible">#00000000</color>
     <color name="primary">#0e141e</color>
-    <color name="screen_background">#e7eeef</color>
     <color name="green">#00ff00</color>
     <color name="red">#ff0000</color>
+
 </resources>

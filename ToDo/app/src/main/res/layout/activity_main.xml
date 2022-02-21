@@ -6,13 +6,13 @@
 
     <androidx.constraintlayout.widget.ConstraintLayout
         android:layout_width="match_parent"
-        android:layout_height="match_parent">
+        android:layout_height="match_parent"
+        android:background="@color/primary_background">
 
         <androidx.recyclerview.widget.RecyclerView
             android:id="@+id/rvTaskList"
             android:layout_width="match_parent"
             android:layout_height="0dp"
-            android:background="@color/screen_background"
             app:layout_constraintBottom_toTopOf="@+id/taskInputLayout"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintStart_toStartOf="parent"
@@ -23,11 +23,13 @@
             android:id="@+id/taskInputLayout"
             android:layout_width="0dp"
             android:layout_height="wrap_content"
+            android:textColorHint="@color/primary_text_white"
             app:endIconContentDescription="Add Task"
             app:endIconDrawable="@drawable/add_button"
             app:endIconMode="custom"
-            app:endIconTint="@color/green"
-            app:boxBackgroundMode="outline"
+            app:endIconTint="@color/primary_text_white"
+            app:boxBackgroundMode="filled"
+            app:boxBackgroundColor="@color/primary_foreground"
             app:layout_constraintBottom_toBottomOf="parent"
             app:layout_constraintEnd_toEndOf="parent"
             app:layout_constraintHorizontal_bias="0.5"
@@ -38,9 +40,7 @@
                 android:id="@+id/etTaskInput"
                 android:layout_width="match_parent"
                 android:layout_height="match_parent"
-                android:background="@color/green"
                 android:hint="Enter Quick Task"
-                android:backgroundTint="@color/white"
                 android:inputType="text" />
 
         </com.google.android.material.textfield.TextInputLayout>
